@@ -1,0 +1,14 @@
+/*This is a custom CSS file*/
+.RadioButtonLabels
+{
+	font-family:garamond;
+	font-size: 40px;
+	font-style: bold;
+}
+
+.TestBoxLabels
+{
+	font-family:garamond;
+	font-size: 20px;
+	font-style: bold;
+}
