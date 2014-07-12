@@ -62,7 +62,7 @@
 @section('script')
 	
 	<script>
-		document.getElementById("optRandomLogins").checked = true;
+		document.getElementById("optRandomUsers").checked = true;
 		SelectRadioButton();
 	
 		var element=document.getElementById("content");
@@ -70,6 +70,6 @@
 	    {
 	        element.style.display = 'block';
 	    }
-
+	    document.getElementById("errorLoremIpsum").innerHTML = "";
 	  </script>
 @stop

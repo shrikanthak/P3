@@ -22,8 +22,9 @@
 		<h1>Developer's Best Friend</h1><br><br>
 		<form method="POST">
 				
-				<input id="optLoremIpsum" id="radio1" onclick="SelectRadioButton()" type="radio" name="radioGroup1" value="1">
-				<label for="radio1" class="RadioButtonLabels">Lorem Ipsum Generator</label></br>
+				<input id="optLoremIpsum" onclick="SelectRadioButton()" type="radio" name="radioGroup1" value="1">
+				<label for="optLoremIpsum" class="RadioButtonLabels">Lorem Ipsum Generator</label></br>
+				
 				<div id="divLorenIpsum" style="display:none">
 					<blockquote class="bg-warning"> In publishing and graphic design, lorem ipsum is a placeholder 
 						text commonly used to demonstrate the graphic elements of a document 
@@ -31,42 +32,52 @@
 						content with filler text of scrambled Latin it allows viewers to focus 
 						on graphical elements such as font, typography, and layout
 					</blockquote>
+
 					<label for="txtNumParagraphs" class="TestBoxLabels">Input number of Paragraphs (MAX 50!)</label>
+					
 					<div class="row">
 						<div class="col-xs-2">
-							<input maxlength="3" type="text" id="txtNumParagraphs" name="txtNumParagraphs" class="form-control">
+							<input maxlength="3" type"text" id="txtNumParagraphs" name="txtNumParagraphs" class="form-control">
 						</div>
 
-						<div class="col-xs-10 errormessage">@yield('errormessageLoremIpsum')</div>
+						<div id="errorLoremIpsum"class="col-xs-10 errormessage">@yield('errormessageLoremIpsum')</div>
 
 					</div>
+
 				</div>
 		
-				<input id="optRandomLogins" id="radio2 "onclick="SelectRadioButton()" type="radio" name="radioGroup1" value="2">
-				<label for="radio2" class="RadioButtonLabels">Random User Generator</label></br>
+				<input id="optRandomUsers" onclick="SelectRadioButton()" type="radio" name="radioGroup1" value="2">
+				<label for="optRandomUsers" class="RadioButtonLabels">Random User Generator</label></br>
 				
-				<div id="divRandomLogins" style="display:none" class="form-group">
-					<label for="txtNumberRandomLogins" class="TestBoxLabels">Input Number of Random User Names(MAX 50)</label>
+				<div id="divRandomUsers" style="display:none" class="form-group">
+					
+					<label for="txtNumberRandomUsers" class="TestBoxLabels">Input Number of Random User Names(MAX 50)</label>
+
 					<div class="row">
 						
 						<div class="col-xs-2">
-							<input type="text" name="txtNumberRandomLogins" class="form-control" id="txtNumberRandomLogins">
+							<input type="text" name="txtNumberRandomUsers" class="form-control" id="txtNumberRandomUsers">
 						</div>
 
-						<div class="col-xs-10 errormessage">@yield('errormessageRandomUsers')</div>
+						<div id="errorRandomUsers" class="col-xs-10 errormessage">@yield('errormessageRandomUsers')</div>
 
 					</div>
+
 				</div>
+				
 				<div class="row">
+					
 					<div class="col-xs-1">
 						<input type="submit" class="btn btn-primary" name="btnSubmit">
 					</div>
+					
 					<div class="col-xs-1">
 						<input type="submit" class="btn btn-default" name="btnReset" value="Reset">
 					</div>
 					
 				</div>
 		</form>
+		
 		<br><br><br>
 		@yield('childcontent')
 	</div>

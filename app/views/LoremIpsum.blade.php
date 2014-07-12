@@ -32,6 +32,7 @@
 @section('script')
 	
 	<script>
+	//Common script across Lorem Ipsum and Random users Page
 		document.getElementById("optLoremIpsum").checked = true;
 		SelectRadioButton();
 	
@@ -40,5 +41,6 @@
 	    {
 	        element.style.display = 'block';
 	    }
+	    document.getElementById("errorRandomUsers").innerHTML = "";
     </script>
 @stop

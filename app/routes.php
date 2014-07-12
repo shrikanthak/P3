@@ -24,33 +24,11 @@ Route::post('/', function()
 	{
         if($data['radioGroup1']==1)
         {
-        	$numTxtParagraphs=$data['txtNumParagraphs'];
-        	
-        	if(is_numeric($numTxtParagraphs) ? ($numTxtParagraphs>0) && ($numTxtParagraphs<=50) : false)
-        	{
-        		return View::make('LoremIpsum')->with('NumElements',$numTxtParagraphs)
-        										->with('error','false');
-    		}
-    		else
-    		{
-    			return View::make('LoremIpsum')->with('NumElements',0)
-        										->with('error','true');
-    		}
-        	
+            return  makeView($data,'txtNumParagraphs', 'LoremIpsum');
         }
         elseif($data['radioGroup1']==2)
         {
-        	$numRandomLogins=$data['txtNumberRandomLogins'];
-        	if(is_numeric($numRandomLogins) ? ($numRandomLogins>0) && ($numRandomLogins<=50) : false)
-        	{
-        		return View::make('RandomLogins')->with('NumElements',$numRandomLogins)
-        										->with('error','false');
-    		}
-    		else
-    		{
-    			return View::make('RandomLogins')->with('NumElements',0)
-        										->with('error','true');
-    		}
+        	return makeView($data,'txtNumberRandomUsers', 'RandomUsers');
         }
         else
         {
@@ -63,3 +41,19 @@ Route::post('/', function()
         return View::make('_master');
     }
 });
+
+function makeView($data,$textboxName, $webpageName)
+{
+    $numElements=$data[$textboxName];
+            
+    if(is_numeric($numElements) ? ($numElements>0) && ($numElements<=50) : false)
+    {
+        return View::make($webpageName)->with('NumElements',$numElements)
+                                        ->with('error','false');
+    }
+    else
+    {
+        return View::make($webpageName)->with('NumElements',0)
+                                        ->with('error','true');
+    }
+}
